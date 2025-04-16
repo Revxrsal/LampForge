@@ -199,3 +199,8 @@ sourceSets.each {
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
 }
+
+compileJava {
+    // Preserve parameter names in the bytecode
+    options.compilerArgs += ["-parameters"]
+}
