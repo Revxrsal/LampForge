@@ -1,9 +1,6 @@
 package com.example.examplemod;
 
-import revxrsal.commands.annotation.Command;
-import revxrsal.commands.annotation.Flag;
-import revxrsal.commands.annotation.Subcommand;
-import revxrsal.commands.annotation.Switch;
+import revxrsal.commands.annotation.*;
 
 @Command("hello")
 public class MyCommand {
@@ -12,7 +9,7 @@ public class MyCommand {
     public void print(
             ForgeCommandActor actor,
             String message,
-            @Flag int times,
+            @Flag @Range(min = 1, max = 50) int times,
             @Switch boolean broadcast,
             @Switch boolean color
     ) {
